@@ -1,5 +1,6 @@
 import requests
 import logging
+import click
 
 
 logger = logging.Logger("main-logger")
@@ -13,7 +14,9 @@ def process_json_endpoint(url:str):
 
 
 
-def cli():
+@click.command()
+@click.option("--fahrenheit", "-f", is_flag=True, default=False, required=False, help="Converts temperature to Fahrenheit")
+def cli(fahrenheit:bool) -> str:
   lookup_ip = process_json_endpoint("https://api.ipify.org?format=json")
   if lookup_ip is None:
      logger.error("Couldn't retrieve IP address")
@@ -25,7 +28,13 @@ def cli():
   weather = process_json_endpoint(f"https://api.open-meteo.com/v1/forecast?latitude={geo['location']['lat']}&longitude={geo['location']['lng']}&current_weather=true")
   if weather is None:
     logger.error("Couldn't get weather for that location.")
-  return f"The temperature in {geo['location']['city']} is {weather['current_weather']['temperature']}"
+
+  if fahrenheit:
+     temp = weather['current_weather']['temperature'] * 1.8 + 32
+     click.echo(f"The temperature in {geo['location']['city']} is {temp:.1f}°F")
+     return
+     
+  click.echo(f"The temperature in {geo['location']['city']} is {weather['current_weather']['temperature']}°C")
   #print(r.json()["current_weather"]["temperature"])
   #else:
   # print("Open-Meteo is down!")
