@@ -3,8 +3,14 @@ import click
 from typing import Any, Dict
 import sys
 import json
-from config import logger
+import logging
+# pulling this logger from external causes pipx:weather to fail
+# from config import logger
 
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+handler = logging.StreamHandler(sys.stdout)
+logger.addHandler(handler)
 
 def process_json_endpoint(url: str) -> Dict[str, Any] | None:
     r = requests.get(url)
