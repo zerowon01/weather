@@ -11,7 +11,7 @@
 - pipx install git+https://github.com/zerowon01/weather.git
 - weather
  
-:fireworks: Voila!
+:fireworks: Voila, your local temperature!
 
 #### Advanced usage
 weather --fahrenheit --json_format
