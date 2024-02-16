@@ -3,7 +3,7 @@ import click
 from typing import Any, Dict
 import sys
 import json
-import pkg_resources
+from weather import __version__
 import logging
 # pulling this logger from external causes pipx:weather to fail
 # from config import logger
@@ -22,7 +22,7 @@ def print_and_exit(message: str) -> None:
     logger.error(message)
     sys.exit(1)
 
-@click.version_option(pkg_resources.get_distribution("weather").version)
+@click.version_option(__version__)
 @click.command()
 @click.option("--fahrenheit", "-f", is_flag=True, default=False,
               required=False, help="Converts temperature to Fahrenheit")
