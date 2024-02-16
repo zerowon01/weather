@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "weather"
-version = "0.3.2"
+version = "0.3.3"
 description = ""
 authors = ["bloomg <greig.bloom@ipsoft.com>"]
 readme = "README.md"
