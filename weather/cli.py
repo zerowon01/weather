@@ -52,7 +52,7 @@ def cli(fahrenheit: bool, json_format: bool) -> None:
                 {"temperature": temp, "unit": "F" if fahrenheit else "C"}))
         else:
             logger.info(
-                f"The temperature in {geo['location']['city']} is {temp}")
+                f"The temperature in {geo['location']['city']} is {temp} {' F' if fahrenheit else ' C'  }")
 
     except Exception as e:
         logger.error(f"Unexpected error: {e}")
