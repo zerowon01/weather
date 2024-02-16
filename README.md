@@ -10,7 +10,8 @@
 ### Install the weather cli app
 - pipx install git+https://github.com/zerowon01/weather.git
 - weather
-- Voila!
+ 
+:fireworks: Voila!
 
 #### Advanced usage
 weather --fahrenheit --json_format
