@@ -13,7 +13,6 @@ def process_json_endpoint(url:str):
        return None
 
 
-
 @click.command()
 @click.option("--fahrenheit", "-f", is_flag=True, default=False, required=False, help="Converts temperature to Fahrenheit")
 def cli(fahrenheit:bool) -> str:
