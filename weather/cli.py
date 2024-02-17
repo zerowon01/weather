@@ -24,11 +24,12 @@ def print_and_exit(message: str) -> None:
 
 @click.version_option(pkg_resources.get_distribution("weather").version)
 @click.command()
+@click.option("--apikey", "-k", required=True)
 @click.option("--fahrenheit", "-f", is_flag=True, default=False,
               required=False, help="Converts temperature to Fahrenheit")
 @click.option("--json_format", "-j", is_flag=True, default=False,
               required=False, help="Ouputs the temperature as a json")
-def cli(fahrenheit: bool, json_format: bool) -> None:
+def cli(apikey:str, fahrenheit: bool, json_format: bool) -> None:
     """Easily get the curent temperature based on your IP address."""
 
     try:
@@ -36,7 +37,7 @@ def cli(fahrenheit: bool, json_format: bool) -> None:
         if lookup_ip is None:
             print_and_exit("CouCould not retrieve your IP address")
         geo = process_json_endpoint(
-            f"https://geo.ipify.org/api/v2/country,city?apiKey=at_xxxx&ipAddress={lookup_ip['ip']}")
+            f"https://geo.ipify.org/api/v2/country,city?apiKey={apikey}&ipAddress={lookup_ip['ip']}")
         if geo is None:
             print_and_exit("Could not get lat/lon!")
         weather = process_json_endpoint(
