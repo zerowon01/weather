@@ -10,6 +10,7 @@ python = "^3.11"
 requests = "^2.31.0"
 click = "^8.1.7"
 flake8-pyproject = "^1.2.3"
+pytest = "^8.0.0"
 setuptools = "^69.1.0"
 python-dotenv = "^1.0.1"
 
