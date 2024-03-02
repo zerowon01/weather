@@ -14,7 +14,7 @@ jobs:
         python-version: ["3.11", "3.12"]
     env:
       FLASK_ENV: development
-      WEATHER_APIKEY: ${{ APIKEY }}
+      WEATHER_APIKEY: ${{ secrets.APIKEY }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python ${{ matrix.python-version }}
