@@ -14,6 +14,7 @@ jobs:
         python-version: ["3.11", "3.12"]
     env:
       FLASK_ENV: development
+      WEATHER_APIKEY: ${{ APIKEY }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python ${{ matrix.python-version }}
@@ -29,6 +30,7 @@ jobs:
           cd $GITHUB_WORKSPACE
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+        run: poetry run pytest
 
 
 # https://github.com/marketplace?type=actions

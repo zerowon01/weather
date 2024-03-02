@@ -2,7 +2,7 @@
 name = "weather"
 version = "0.3.7"
 description = ""
-authors = ["bloomg <greig.bloom@ipsoft.com>"]
+authors = ["bloomg <gbloom42@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
@@ -11,6 +11,7 @@ requests = "^2.31.0"
 click = "^8.1.7"
 flake8-pyproject = "^1.2.3"
 setuptools = "^69.1.0"
+python-dotenv = "^1.0.1"
 
 
 [tool.poetry.scripts]
