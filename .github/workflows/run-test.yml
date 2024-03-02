@@ -30,7 +30,7 @@ jobs:
           cd $GITHUB_WORKSPACE
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-        run: poetry run pytest
+        run: pytest
 
 
 # https://github.com/marketplace?type=actions
