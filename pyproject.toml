@@ -13,6 +13,7 @@ flake8-pyproject = "^1.2.3"
 pytest = "^8.0.0"
 setuptools = "^69.1.0"
 python-dotenv = "^1.0.1"
+importlib-metadata = {version = "^7.0.1", optional = true}
 
 
 [tool.poetry.scripts]
