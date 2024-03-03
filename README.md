@@ -1,7 +1,7 @@
 # Your Weather; right at the command line!!
 ## A simple CLI tool to get the weather in your location.
 
-https://github.com/zerowon01/weather/actions/workflows/run-test.yml/badge.svg
+[![Weather CI/CD](https://github.com/zerowon01/weather/actions/workflows/run-test.yml/badge.svg)](https://github.com/zerowon01/weather/actions/workflows/run-test.yml/badge.svg)
 
 ### Getting started
 - brew install pipx (macOS)
