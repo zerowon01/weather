@@ -6,6 +6,7 @@ import json
 from importlib import metadata
 import logging
 import os
+from dotenv import load_dotenv
 # pulling this logger from external causes pipx:weather to fail
 # from config import logger
 
