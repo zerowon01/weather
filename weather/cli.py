@@ -37,7 +37,7 @@ def cli(apikey:str, fahrenheit: bool, json_format: bool) -> None:
     """Easily get the curent temperature based on your IP address."""
     load_dotenv(".env")
     if (apikey := apikey or os.environ.get("WEATHER_APIKEY")) is None:
-        print("No api key!")
+        print("No api key provided!")
         return 1
     try:
         lookup_ip = process_json_endpoint("https://api.ipify.org?format=json")
